@@ -8,7 +8,7 @@ import { AuthRoute } from './util/route_util';
 const App = () => (
   <div>
     <Link to="/">
-      <h1>Welcome to POPO CRM</h1>
+      <h1>If you see this, you're on the top of the world.</h1>
     </Link>
     <GreetingContainer />
     <Switch>
