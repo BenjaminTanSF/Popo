@@ -1,0 +1,45 @@
+.navBar {
+  background-color: #313949;
+  position: relative;
+  width: 100%;
+  min-height: 58px;
+  z-index: 1;
+}
+
+.navBar div {
+  vertical-align: middle;
+}
+
+.navBar .img-responsive {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  padding: 12px;
+}
+
+.navBar a, .navBar h2 {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 18px 10px;
+  font-size: medium;
+}
+
+.navBarLeft {
+  float: left;
+  padding-left: 2vw;
+}
+
+.navBarRight {
+  float: right;
+  padding-right: 1vw;
+}
+
+.navBarRight div {
+  float: right;
+}
+
+.userThumbnail {
+  cursor: pointer;
+}

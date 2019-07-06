@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PopoCrm</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <script type="text/javascript">
+      window.iconHandshakeURL = "<%= image_url('icon-handshake.png') %>"
+      window.signupBgURL = "<%= image_url('signup-bg.jpg') %>"
+      window.userThumbnailURL = "<%= image_url('user-thumbnail.png') %>"
+      window.ncThumbnailURL = "<%= image_url('nc-thumbnail.gif') %>"
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

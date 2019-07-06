@@ -1,0 +1,157 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.loginForm input, .signupForm input {
+  box-sizing: border-box;
+  margin: 10px auto;
+  border: 1px solid #d5d5d5;
+  line-height: 31px;
+  height: 31px;
+  outline: medium none;
+  padding: 2px 5px;
+  color: #141823;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: start;
+}
+
+.loginForm {
+  text-align: center;
+}
+
+.signupForm {
+  box-sizing: content-box;
+  float: left;
+  padding: 100px 50px 80px;
+  min-width: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loginForm input {
+  width: 270px;
+}
+
+.signupForm input {
+  width: 500px;
+  height: 50px;
+}
+
+#submitBtn, #demoLogin {
+  background-color: #f04b2f;
+  border: 1px solid #f04b2f;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #666;
+}
+
+#login, #signup {
+  width: 500px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px auto;
+}
+
+.errorMsg {
+  margin-top: 10px;
+}
+
+.errorMsg li {
+  color: red;
+  padding-top: 5px;
+}
+
+.signupFormRight {
+  margin: 0 0 20px;
+  margin-left: 500px;
+}
+
+.signupFormRight>a {
+  display: inline-block;
+}
+
+.signupFormRight>a img {
+  float: left;
+  max-width: 44px;
+}
+
+.signupFormRight span {
+  color: #333;
+  font-size: 24px;
+  line-height: 48px;
+  margin: 0 0 0 12px;
+  vertical-align: top;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+
+.signupFormLeft:after {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, .35);
+}
+
+.signupFormLeft {
+  position: fixed;
+  top: 0;
+  width: 500px;
+  background: image-url('signup-bg.jpg') left top no-repeat;
+}
+
+.signupFormLeft, .signupFormLeft:after {
+  content: '';
+  height: 100%;
+  left: 0;
+}
+
+.testimonial {
+  margin-top: 300px;
+  max-width: 70%;
+  color: #fff;
+  margin: 200px auto 0;
+  text-align: center;
+  font-family: 'Droid Serif', serif, Arial, Helvetica, sans-serif;
+  transition: margin .7s ease 0s;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial > span {
+  margin: 0 auto 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.testimonial p {
+  color: #f2f2f2;
+  line-height: 28px;
+  margin: 0 0 15px;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.testimonial p.customerName {
+  color: #00add5;
+  font-size: 12px;
+  text-transform: uppercase;
+}
