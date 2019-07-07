@@ -6,11 +6,13 @@ export const login = user => (
   })
 );
 
-export const signup = user => (
+export const signup = formData => (
   $.ajax({
     method: 'POST',
     url: '/api/user',
-    data: { user }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 );
 

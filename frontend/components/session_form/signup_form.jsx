@@ -12,8 +12,10 @@ class SignupForm extends React.Component {
       last_name: '',
       position: '',
       org_id: '',
+      photoFile: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   componentWillUnmount() {
@@ -28,7 +30,23 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.signup(this.state);
+    const formData = new FormData();
+    formData.append('user[username]', this.state.username);
+    formData.append('user[password]', this.state.password);
+    formData.append('user[email]', this.state.email);
+    formData.append('user[first_name]', this.state.first_name);
+    formData.append('user[last_name]', this.state.last_name);
+    formData.append('user[position]', this.state.position);
+    formData.append('user[org_id]', this.state.org_id);
+    formData.append('user[photo]', this.state.photoFile);
+    this.props.signup(formData);
+  }
+
+  handleFile(e) {
+    e.preventDefault();
+    this.setState({
+      photoFile: e.currentTarget.files[0]
+    })
   }
 
   renderErrors() {
@@ -121,6 +139,8 @@ class SignupForm extends React.Component {
                   placeholder="Organization_id"
                 />
               </label>
+              <br />
+              <input type="file" id="fileBtn" onChange={this.handleFile} />
               <br />
               <input type="submit" value="Sign Up" id="submitBtn" />
             </div>
