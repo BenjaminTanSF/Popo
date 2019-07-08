@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 gem 'aws-sdk-s3'
+gem 'pry-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -42,7 +43,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
   gem 'annotate'
 end
 
