@@ -38,8 +38,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   def ensure_photo
-    unless self.photo.attached?
-      errors[:photo] << "must be attached"
+    if !self.photo.attached?
+      self.photo.attach(io: File.open('app/assets/images/user-thumbnail.png'), filename: 'profile.png', content_type: 'image/png')
     end
   end
 
