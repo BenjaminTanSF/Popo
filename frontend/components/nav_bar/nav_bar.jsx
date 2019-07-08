@@ -23,7 +23,7 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
       <div className="navBarRight">
         <div className="userThumbnail">
           <img className="img-responsive"
-            src={window.userThumbnailURL}
+            src={currentUser.photoUrl}
             alt="" width="33" height="33"
             onClick={modalState ? () => closeModal() : () => openModal('profile')} />
         </div>
