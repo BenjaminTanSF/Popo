@@ -30,11 +30,18 @@ class User < ApplicationRecord
   validates :username, :password_digest, :email, :first_name, :last_name, :position, :org_id, :session_token, presence: true
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
+  validate :ensure_photo
   # validates :password, format: { with: PASSWORD_FORMAT }, allow_nil: true
 
   has_one_attached :photo
 
   after_initialize :ensure_session_token
+
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "must be attached"
+    end
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

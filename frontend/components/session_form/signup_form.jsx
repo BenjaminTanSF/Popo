@@ -12,7 +12,8 @@ class SignupForm extends React.Component {
       last_name: '',
       position: '',
       org_id: '',
-      photoFile: null
+      photoFile: null,
+      photoUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -38,15 +39,25 @@ class SignupForm extends React.Component {
     formData.append('user[last_name]', this.state.last_name);
     formData.append('user[position]', this.state.position);
     formData.append('user[org_id]', this.state.org_id);
-    formData.append('user[photo]', this.state.photoFile);
+    if (this.state.photoFile) {
+      formData.append('user[photo]', this.state.photoFile);
+    }
     this.props.signup(formData);
   }
 
   handleFile(e) {
     e.preventDefault();
-    this.setState({
-      photoFile: e.currentTarget.files[0]
-    })
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({
+        photoFile: file,
+        photoUrl: fileReader.result
+      })
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   renderErrors() {
@@ -62,6 +73,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} alt="" /> : null;
     return (
       <div className="signupForm">
         <div className="signupFormLeft">
@@ -141,6 +153,8 @@ class SignupForm extends React.Component {
               </label>
               <br />
               <input type="file" id="fileBtn" onChange={this.handleFile} />
+              <h6>Preview</h6>
+              {preview}
               <br />
               <input type="submit" value="Sign Up" id="submitBtn" />
             </div>
