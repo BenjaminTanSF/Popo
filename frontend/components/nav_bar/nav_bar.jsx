@@ -6,7 +6,16 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
   const sessionLinks = () => (
     <div className="navBar">
       <div className="navBarLeft">
-        <Link to="/">Home</Link>
+        <div className="menuItem menuActive">
+          <Link to="/">
+            <div className="logo">
+              <span className="logo-1">P</span>
+              <span className="logo-2">O</span>
+              <span className="logo-3">P</span>
+              <span className="logo-4">O</span>
+            </div>
+          </Link>
+        </div>
       </div>
       <div className="navBarRight">
         <Link to="/login">Login</Link>
@@ -18,7 +27,16 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
   const currentUserName = () => (
     <div className="navBar">
       <div className="navBarLeft">
-        <Link to="/">Home</Link>
+        <div className="menuItem menuActive">
+          <Link to="/">
+            <div className="logo">
+              <span className="logo-1">P</span>
+              <span className="logo-2">O</span>
+              <span className="logo-3">P</span>
+              <span className="logo-4">O</span>
+            </div>
+          </Link>
+        </div>
       </div>
       <div className="navBarRight">
         <div className="userThumbnail">

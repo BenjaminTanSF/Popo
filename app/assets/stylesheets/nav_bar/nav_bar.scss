@@ -4,42 +4,72 @@
   width: 100%;
   min-height: 58px;
   z-index: 1;
-}
 
-.navBar div {
-  vertical-align: middle;
-}
+  div {
+    vertical-align: middle;
+  }
 
-.navBar .img-responsive {
-  display: inline-block;
-  width: 33px;
-  height: 33px;
-  border-radius: 100%;
-  padding: 12px;
-}
+  .menuActive {
+    background-color: rgba(255,255,255,.2);
+  }
 
-.navBar a, .navBar h2 {
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  padding: 18px 10px;
-  font-size: medium;
-}
+  .img-responsive {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    padding: 12px;
+  }
 
-.navBarLeft {
-  float: left;
-  padding-left: 2vw;
-}
+  a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 10px;
+    font-size: medium;
+  }
 
-.navBarRight {
-  float: right;
-  padding-right: 1vw;
-}
+  .navBarLeft {
+    float: left;
+    padding-left: 2vw;
+  }
 
-.navBarRight div {
-  float: right;
-}
+  .navBarRight {
+    float: right;
+    padding-right: 1vw;
+  }
 
-.userThumbnail {
-  cursor: pointer;
+  .navBarRight div {
+    float: right;
+  }
+
+  .userThumbnail {
+    cursor: pointer;
+  }
+
+  .logo span {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .logo-1 {
+    color: #d81f28;
+    text-shadow: 2px -2px 4px #e93a33;
+  }
+
+  .logo-2 {
+    color: #349b47;
+    text-shadow: -2px -2px 4px #a4d1a0;
+    padding-left: 2px;
+  }
+
+  .logo-3 {
+    color: #2e64a1;
+    text-shadow: 2px -2px 4px #a2cfef;
+  }
+
+  .logo-4 {
+    color: #f3ad1d;
+    text-shadow: 2px -2px 4px #f7d604;
+  }
 }

@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.string :position, null: false
+      t.integer :supervisor_id, default: nil
       t.integer :org_id, null: false
       t.string :session_token, null: false
 
@@ -16,5 +17,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     add_index :users, :email, unique: true
     add_index :users, :session_token, unique: true
     add_index :users, :org_id
+    add_index :users, :supervisor_id
   end
 end

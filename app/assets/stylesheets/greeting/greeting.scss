@@ -5,17 +5,12 @@
   height: 4vh;
   width: 100%;
   margin-top: 5px;
-}
 
-.personalGreeting h2 {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 37px;
-  font-size: 23px;
-  padding-left: 1.5vw;
-}
-
-.logoutBtn:hover {
-  background-color: #e5e5e5;
-  cursor: pointer;
+  h2 {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 37px;
+    font-size: 23px;
+    padding-left: 1.5vw;
+  }
 }

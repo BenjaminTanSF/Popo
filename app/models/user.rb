@@ -31,11 +31,19 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
   validate :ensure_photo
+  # validate :ensure_supervisor
   # validates :password, format: { with: PASSWORD_FORMAT }, allow_nil: true
 
   has_one_attached :photo
 
   after_initialize :ensure_session_token
+  after_initialize :ensure_supervisor
+
+  def ensure_supervisor
+    if self.supervisor_id.nil?
+      self.supervisor_id = self.id
+    end
+  end
 
   def ensure_photo
     if !self.photo.attached?

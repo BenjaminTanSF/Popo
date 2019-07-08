@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_232029) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "position", null: false
+    t.integer "supervisor_id"
     t.integer "org_id", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_232029) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["org_id"], name: "index_users_on_org_id"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
+    t.index ["supervisor_id"], name: "index_users_on_supervisor_id"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
