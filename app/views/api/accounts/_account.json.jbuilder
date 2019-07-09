@@ -1,0 +1,1 @@
+json.extract! account, :id, :name, :website, :phone_number, :industry, :logo, :employees, :annual_revenue_mil, :owner_id

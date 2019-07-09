@@ -9,6 +9,7 @@
 #  first_name      :string           not null
 #  last_name       :string           not null
 #  position        :string           not null
+#  supervisor_id   :integer
 #  org_id          :integer          not null
 #  session_token   :string           not null
 #  created_at      :datetime         not null
@@ -31,10 +32,31 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
   validate :ensure_photo
+  # validates :supervisor_id, presence: { allow_nil: true }
   # validate :ensure_supervisor
   # validates :password, format: { with: PASSWORD_FORMAT }, allow_nil: true
 
   has_one_attached :photo
+
+  belongs_to :supervisor, optional: true,
+    foreign_key: :supervisor_id,
+    class_name: :User
+
+  has_many :subordinates,
+    foreign_key: :supervisor_id,
+    class_name: :User
+
+  belongs_to :organization,
+    foreign_key: :org_id,
+    class_name: :Account
+
+  has_many :accounts,
+    foreign_key: :owner_id,
+    class_name: :Account
+
+  has_many :supervising_accounts,
+    through: :subordinates,
+    source: :accounts
 
   after_initialize :ensure_session_token
   after_initialize :ensure_supervisor
