@@ -37,6 +37,13 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
             </div>
           </Link>
         </div>
+        <div className="menuItem">
+          <Link to="/accounts">
+            <div className="accounts">
+              <span className="accountsSpan">Accounts</span>
+            </div>
+          </Link>
+        </div>
       </div>
       <div className="navBarRight">
         <div className="userThumbnail">

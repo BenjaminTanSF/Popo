@@ -1,0 +1,44 @@
+.splash {
+  width: 100%;
+  height: calc(100vh - 58px);
+  background-image: linear-gradient( #51afff, #ffffff);
+  
+  h1 {
+      font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 150px;
+    width: 800px;
+    margin: auto;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: small;
+    text-align: center;
+    margin: 20px auto;
+    width: 850px;
+    line-height: 1.5;
+  }
+
+  .btnDiv {
+    text-align: center;
+    margin: 50px auto;
+
+    a {
+      background-color: red;
+      color: white;
+      padding: 1em 1.5em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  
+    a:hover {
+      background-color: #555;
+    }
+  
+    a:active {
+      background-color: black;
+    }
+  }
+}

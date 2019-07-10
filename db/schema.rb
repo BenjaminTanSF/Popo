@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_07_08_183928) do
     t.string "phone_number"
     t.string "industry", null: false
     t.string "employees"
-    t.string "logo"
     t.boolean "is_org", null: false
     t.integer "annual_revenue_mil"
     t.integer "owner_id"

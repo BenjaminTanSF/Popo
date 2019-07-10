@@ -17,7 +17,15 @@
 
 class Account < ApplicationRecord
   validates :name, :industry, presence: true
-  validates :is_org, inclusion: [true, false]
+  # validates :is_org, inclusion: [true, false]
+  validate :ensure_logo
+  has_one_attached :logo
+  
+  def ensure_logo
+    if !self.logo.attached?
+      self.logo.attach(io: File.open('app/assets/images/default-logo.png'), filename: 'default-logo.png', content_type: 'image/png')
+    end
+  end
   
   belongs_to :owner, optional: true,
     foreign_key: :owner_id,

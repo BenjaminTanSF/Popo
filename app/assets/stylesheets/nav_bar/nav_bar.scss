@@ -1,12 +1,22 @@
 .navBar {
   background-color: #313949;
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   min-height: 58px;
   z-index: 1;
 
   div {
     vertical-align: middle;
+  }
+
+  .menuItem {
+    float: left;
+
+    .accounts span{
+      font-size: large;
+      color: white;
+    }
   }
 
   .menuActive {

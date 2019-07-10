@@ -6,7 +6,6 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.string :phone_number
       t.string :industry, null: false
       t.string :employees
-      t.string :logo
       t.boolean :is_org, null: false
       t.integer :annual_revenue_mil
       t.integer :owner_id

@@ -47,7 +47,7 @@ ActiveRecord::Base.transaction do
 
   owner_ids = Array(User.first.id..User.last.id)
 
-  2000.times do
+  500.times do
     Account.create!(
       'name' => Faker::Company.name,
       'website' => Faker::Internet.url,
@@ -56,26 +56,25 @@ ActiveRecord::Base.transaction do
       'employees' => Faker::Number.between(50, 2000).to_s,
       'is_org' => Faker::Boolean.boolean(0.01),
       'owner_id' => owner_ids.sample,
-      'logo' => Faker::Company.logo,
       'annual_revenue_mil' => Faker::Number.number(3).to_i
     )
   end
   
-end
-
-account_ids = Array(Account.first.id..Account.last.id)
-account_ids.length.times do
-  account_ids << nil
-end
-
-sup_ids = Array(User.first.id..(User.first.id + 5))
-
-User.all.each do |usr|
-  usr.update_attributes!(:supervisor_id => sup_ids.sample)
-  rand_acc_id = account_ids.sample
-  unless rand_acc_id.nil?
-    usr.update_attributes!(:org_id => rand_acc_id)
-    rand_acc = Account.find(rand_acc_id)
-    rand_acc.update_attributes!(:owner_id => usr.id)
+  account_ids = Array(Account.first.id..Account.last.id)
+  account_ids.length.times do
+    account_ids << nil
   end
+  
+  sup_ids = Array(User.first.id..(User.first.id + 5))
+  
+  User.all.each do |usr|
+    usr.update_attributes!(:supervisor_id => sup_ids.sample)
+    rand_acc_id = account_ids.sample
+    unless rand_acc_id.nil?
+      usr.update_attributes!(:org_id => rand_acc_id)
+      rand_acc = Account.find(rand_acc_id)
+      rand_acc.update_attributes!(:owner_id => usr.id)
+    end
+  end
+
 end

@@ -1,9 +1,6 @@
 class Api::AccountsController < ApplicationController
   def index
-    @accounts = current_user.supervising_accounts
-    # current_user.subordinates.each do |subordinate|
-    #   @accounts.push(subordinate.accounts)
-    # end
+    @accounts = current_user.accounts + current_user.supervising_accounts
     render "api/accounts/index"
   end
 
@@ -34,14 +31,14 @@ class Api::AccountsController < ApplicationController
     @account = Account.find(params[:id])
     if @account
       @account.destroy!
-      render "api/accounts/index"
+      render "api/accounts/show"
     else
       render json: @account.errors.full_messages, status: 422
     end
   end
 
   private
-  def user_params
-    params.require(:account).permit(:name, :industry)
+  def account_params
+    params.require(:account).permit(:name, :industry, :website, :phone_number, :employees, :is_org, :annual_revenue_mil, :owner_id)
   end
 end
