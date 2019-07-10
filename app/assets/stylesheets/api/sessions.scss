@@ -76,6 +76,36 @@
 .signupFormRight {
   margin: 0 0 20px;
   margin-left: 500px;
+
+  .box {
+    box-sizing: border-box;
+
+    .inputfile {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    label {
+      color: #d3394c;
+      width: 100%;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      display: inline-block;
+      overflow: hidden;
+
+      svg {
+        width: 2em;
+        height: 2em;
+        vertical-align: middle;
+        fill: currentColor;
+        margin-top: 0.25em;
+      }
+    }
+  }
 }
 
 .signupFormRight>a {
@@ -154,4 +184,10 @@ h3 {
   color: #00add5;
   font-size: 12px;
   text-transform: uppercase;
+}
+
+.previewPic {
+  max-height: 200px;
+  display: block;
+  margin: auto;
 }
