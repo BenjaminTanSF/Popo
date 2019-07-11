@@ -8,7 +8,7 @@
 #  phone_number       :string
 #  industry           :string           not null
 #  employees          :string
-#  is_org             :boolean          default(FALSE), not null
+#  is_org             :boolean          not null
 #  annual_revenue_mil :integer
 #  owner_id           :integer
 #  created_at         :datetime         not null
@@ -17,7 +17,6 @@
 
 class Account < ApplicationRecord
   validates :name, :industry, presence: true
-  # validates :is_org, inclusion: [true, false]
   validate :ensure_logo
   has_one_attached :logo
   
@@ -39,4 +38,7 @@ class Account < ApplicationRecord
     through: :owner,
     source: :supervisor
 
+  has_many :contacts,
+    foreign_key: :company_id,
+    class_name: :Contact
 end

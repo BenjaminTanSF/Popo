@@ -58,6 +58,14 @@ class User < ApplicationRecord
     through: :subordinates,
     source: :accounts
 
+  has_many :contacts,
+    through: :accounts,
+    source: :contacts
+
+  has_many :supervising_contacts,
+    through: :subordinates,
+    source: :contacts
+
   after_initialize :ensure_session_token
   after_initialize :ensure_supervisor
 

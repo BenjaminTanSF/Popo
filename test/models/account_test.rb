@@ -8,7 +8,7 @@
 #  phone_number       :string
 #  industry           :string           not null
 #  employees          :string
-#  is_org             :boolean          default(FALSE), not null
+#  is_org             :boolean          not null
 #  annual_revenue_mil :integer
 #  owner_id           :integer
 #  created_at         :datetime         not null

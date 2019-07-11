@@ -1,0 +1,114 @@
+.editForm {
+  form {
+    .editFormHeader {
+      position: sticky;
+      top: 103px;
+      min-height: 70px;
+      padding-left: 1.5vw;
+      background: white;
+      box-shadow: 0 8px 6px -6px #ccc;
+
+      .span {
+        float: left;
+        margin-left: 2vw;
+        padding-top: 19px;
+
+        span {
+          font-size: 32px;
+          font-family: ProximaNovaLight, sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+      }
+
+      #submitBtn {
+        margin-top: 25px;
+        margin-left: 70%;
+        color: white!important;
+        border-radius: 2px!important;
+        background-color: #42a2eb!important;
+        border: solid 1px #42a2eb!important;
+        height: 40px;
+        margin-top: 19px;
+      }
+    }
+
+    .formMain {
+      margin-left: 5vw;
+      line-height: 2;
+
+      .accountInformation {
+        font-weight: bolder;
+      }
+
+      .formBody {
+        margin-left: 1vw;
+
+        span {
+          width: 30%;
+        }
+
+        input {
+          width: 45%;
+          border-radius: 5px;
+          border: 1px solid #c3c6ca;
+          font-size: smaller;
+          padding-left: 10px;
+        }
+
+        span, input {
+          display: inline-block;
+          height: 40px;
+          margin-bottom: 10px;
+        }
+
+        .editFormLeft, .editFormRight {
+          width: 45%;
+        }
+
+        .editFormLeft {
+          float: left;
+        }
+
+        .editFormRight{
+          float: left;
+          .box {
+            box-sizing: border-box;
+
+            .inputfile {
+              width: 0.1px;
+              height: 0.1px;
+              opacity: 0;
+              overflow: hidden;
+              position: absolute;
+              z-index: -1;
+            }
+
+            label {
+              color: #d3394c;
+              width: 100%;
+              text-overflow: ellipsis;
+              cursor: pointer;
+              display: inline-block;
+              overflow: hidden;
+
+              svg {
+                width: 2em;
+                height: 2em;
+                vertical-align: middle;
+                fill: currentColor;
+                margin-top: 0.25em;
+              }
+            }
+          }
+        }
+      }
+
+      .formBody::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    }
+  }
+}

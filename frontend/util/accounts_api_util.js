@@ -9,7 +9,9 @@ export const create = account => (
   $.ajax({
     method: 'POST',
     url: '/api/accounts',
-    data: { account }
+    data: account,
+    contentType: false,
+    processData: false
   })
 );
 // export const create = formData => (
@@ -33,7 +35,9 @@ export const update = (account, id) => (
   $.ajax({
     method: 'PATCH',
     url: `/api/accounts/${id}`,
-    data: { account }
+    data: account,
+    contentType: false,
+    processData: false
   })
 );
 // export const update = formData => (

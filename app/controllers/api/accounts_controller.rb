@@ -39,6 +39,6 @@ class Api::AccountsController < ApplicationController
 
   private
   def account_params
-    params.require(:account).permit(:name, :industry, :website, :phone_number, :employees, :is_org, :annual_revenue_mil, :owner_id)
+    params.require(:account).permit(:name, :industry, :website, :phone_number, :employees, :ein, :is_org, :catch_phrase, :ownership, :annual_revenue_mil, :owner_id, :sic_code, :logo)
   end
 end

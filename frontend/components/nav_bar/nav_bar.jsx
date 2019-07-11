@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 // import Modal from '../modal/modal';
 
 const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
+  const toggleActive = (e) => {
+    let divs = document.querySelectorAll('.menuItem');
+    // debugger;
+    divs.forEach(div => div.classList.remove('menuActive'));
+    e.currentTarget.classList.add('menuActive');
+  }
+
   const sessionLinks = () => (
     <div className="navBar">
       <div className="navBarLeft">
-        <div className="menuItem menuActive">
+        <div className="menuItem menuActive" onClick={toggleActive}>
           <Link to="/">
             <div className="logo">
               <span className="logo-1">P</span>
@@ -27,7 +34,7 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
   const currentUserName = () => (
     <div className="navBar">
       <div className="navBarLeft">
-        <div className="menuItem menuActive">
+        <div className="menuItem" onClick={toggleActive}>
           <Link to="/">
             <div className="logo">
               <span className="logo-1">P</span>
@@ -37,7 +44,7 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
             </div>
           </Link>
         </div>
-        <div className="menuItem">
+        <div className="menuItem menuActive" onClick={toggleActive}>
           <Link to="/accounts">
             <div className="accounts">
               <span className="accountsSpan">Accounts</span>

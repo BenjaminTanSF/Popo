@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_183928) do
+ActiveRecord::Schema.define(version: 2019_07_10_214021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,12 @@ ActiveRecord::Schema.define(version: 2019_07_08_183928) do
     t.string "phone_number"
     t.string "industry", null: false
     t.string "employees"
+    t.string "ein"
+    t.string "catch_phrase"
+    t.string "ownership"
     t.boolean "is_org", null: false
     t.integer "annual_revenue_mil"
+    t.integer "sic_code"
     t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,6 +52,18 @@ ActiveRecord::Schema.define(version: 2019_07_08_183928) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "phone_number"
+    t.string "cell_number"
+    t.integer "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_contacts_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|

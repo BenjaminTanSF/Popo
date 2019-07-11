@@ -9,15 +9,20 @@
 ActiveRecord::Base.transaction do
   Account.destroy_all
   User.destroy_all
+  Contact.destroy_all
 
   demo_account = Account.create!(
     'name' => 'POPO',
     'website' => 'https://popo-crm.herokuapp.com/',
-    'phone_number' => '800-123-4567',
-    'industry' => 'finance',
+    'phone_number' => Faker::PhoneNumber.phone_number,
+    'industry' => Faker::Company.industry,
     'employees' => Faker::Number.between(50, 2000).to_s,
+    'ein' => Faker::Company.ein,
+    'catch_phrase' => Faker::Company.catch_phrase,
+    'ownership' => Faker::Company.type,
     'is_org' => true,
-    'annual_revenue_mil' => 50
+    'sic_code' => Faker::Number.number(4).to_i,
+    'annual_revenue_mil' => Faker::Number.number(3).to_i
   )
 
   demo_user = User.create!(
@@ -51,18 +56,30 @@ ActiveRecord::Base.transaction do
     Account.create!(
       'name' => Faker::Company.name,
       'website' => Faker::Internet.url,
-      'phone_number' => Faker::PhoneNumber.phone_number_with_country_code,
+      'phone_number' => Faker::PhoneNumber.phone_number,
       'industry' => Faker::Company.industry,
       'employees' => Faker::Number.between(50, 2000).to_s,
+      'ein' => Faker::Company.ein,
+      'catch_phrase' => Faker::Company.catch_phrase,
+      'ownership' => Faker::Company.type,
       'is_org' => Faker::Boolean.boolean(0.01),
       'owner_id' => owner_ids.sample,
+      'sic_code' => Faker::Number.number(4).to_i,
       'annual_revenue_mil' => Faker::Number.number(3).to_i
     )
   end
   
   account_ids = Array(Account.first.id..Account.last.id)
-  account_ids.length.times do
-    account_ids << nil
+
+  100.times do
+    Contact.create!(
+      'email' => Faker::Internet.unique.free_email,
+      'first_name' => Faker::Name.first_name,
+      'last_name' => Faker::Name.last_name,
+      'phone_number' => Faker::PhoneNumber.phone_number,
+      'cell_number' => Faker::PhoneNumber.cell_phone,
+      'company_id' => account_ids.sample
+    )
   end
   
   sup_ids = Array(User.first.id..(User.first.id + 5))
@@ -70,11 +87,9 @@ ActiveRecord::Base.transaction do
   User.all.each do |usr|
     usr.update_attributes!(:supervisor_id => sup_ids.sample)
     rand_acc_id = account_ids.sample
-    unless rand_acc_id.nil?
-      usr.update_attributes!(:org_id => rand_acc_id)
-      rand_acc = Account.find(rand_acc_id)
-      rand_acc.update_attributes!(:owner_id => usr.id)
-    end
+    usr.update_attributes!(:org_id => rand_acc_id)
+    rand_acc = Account.find(rand_acc_id)
+    rand_acc.update_attributes!(:owner_id => usr.id)
   end
 
 end

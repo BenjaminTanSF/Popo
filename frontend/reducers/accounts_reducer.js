@@ -10,6 +10,8 @@ const accountsReducer = (oldState = {}, action) => {
       nextState = action.accounts;
       return nextState;
     case RECEIVE_CURRENT_ACCOUNT:
+      // let newState = Object.assign({}, oldState, {[action.currentAccount.id]: action.currentAccount});
+      // return newState;
       nextState = action.currentAccount;
       return nextState;
     case DESTROY_CURRENT_ACCOUNT:

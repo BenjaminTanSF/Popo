@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 const AccountsListItem = ({ account }) => (
   <tr>
     <td className="tableHeadAccountName">
-      <Link to={`/account/${account.id}`}>
-        <img className="img-responsive"
-          src={account.logoUrl}
-          alt="" width="33" height="33" />
-      </Link>
-      <Link to={`/account/${account.id}`}>
+      <Link to={`/accounts/${account.id}`}>
         {account.name}
       </Link>
     </td>
