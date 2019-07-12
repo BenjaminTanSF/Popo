@@ -1,0 +1,79 @@
+.contactsIndex {
+  margin-bottom: 30px;
+  // margin-top: 10px;
+
+  tr#contactsTableHead {
+    width: calc(100% - 15px);
+  }
+
+  .contactsHeader {
+    position: sticky;
+    top: 103px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+    padding-left: 1.5vw;
+
+    .allContacts {
+      float: left;
+      font-weight: bold;
+      display: inline-block;
+      width: 93%;
+    }
+
+    a {
+      text-decoration: none;
+      border: 1px solid #e5e5e5;
+      font-size: 25px;
+      padding: 0px 9px;
+    }
+  }
+
+  .contactsIndexTable {
+    .contactsTable {
+      display: table;
+      width: 90%;
+      margin: auto;
+      box-shadow: 0px 1px 0px 0px lightgrey;
+
+        thead, tbody {
+          float: left;
+          width: 100%;
+        }
+
+        tbody {
+          overflow: auto;
+          height: 450px;
+          height: calc(100vh - 250px);
+
+          .tableHeadContactName a, .tableHeadEmail span {
+            color: #5295d9;
+          }
+        }
+
+        tr {
+          width: 100%;
+          display: table;
+          text-align: left;
+          min-height: 22px;
+          box-shadow: 0px 0px 0.5px 0px lightgrey;
+        }
+
+        th, td {
+          width: 25%;
+          text-align: left;
+          font-size: 24px;
+          padding: 13px 0px;
+
+          a {
+            text-decoration: none;
+          }
+
+        }
+    }
+  }
+  .contactsIndexCount {
+    margin-left: 5%;
+    margin-top: 5px;
+  }
+}

@@ -9,7 +9,9 @@ export const create = contact => (
   $.ajax({
     method: 'POST',
     url: '/api/contacts',
-    data: { contact }
+    data: contact,
+    contentType: false,
+    processData: false
   })
 );
 
@@ -20,11 +22,13 @@ export const show = id => (
   })
 );
 
-export const update = contact => (
+export const update = (contact, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/contacts/${contact.id}`,
-    data: { contact }
+    url: `/api/contacts/${id}`,
+    data: contact,
+    contentType: false,
+    processData: false
   })
 );
 

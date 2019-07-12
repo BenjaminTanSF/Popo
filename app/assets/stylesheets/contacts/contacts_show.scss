@@ -1,0 +1,64 @@
+.contactDetail {
+  .contactsHeader {
+    position: sticky;
+    top: 103px;
+    min-height: 70px;
+    padding-left: 1.5vw;
+    background: white;
+    box-shadow: 0 8px 6px -6px #ccc;
+
+    div {
+      float: left;
+      margin-left: 2vw;
+    }
+
+    .leftArrow{
+      img {
+        margin-top: 25px;
+      }
+    }
+
+    .photoDiv {
+      height: 70px;
+
+      img {
+        margin-top: 10px;
+      }
+    }
+
+    .fullName {
+      margin-top: 25px;
+
+      a {
+        text-decoration: none;
+        color: #868686;
+      }
+    }
+
+    .editBtn {
+      margin-top: 25px;
+      margin-left: 64%;
+
+      a {
+        text-decoration: none;
+        color: #3c3c3c;
+        border: solid 1px #c4c4c4;
+        padding: .35rem 1.071rem;
+      }
+    }
+  }
+
+  .contactDetailTableDiv {
+    margin-left: 6vw;
+    line-height: 2;
+
+    table {
+      margin-left: 1vw;
+
+      .grey {
+        color: #777;
+        margin-right: 8vw;
+      }
+    }
+  }
+}

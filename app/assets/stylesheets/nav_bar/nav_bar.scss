@@ -13,7 +13,7 @@
   .menuItem {
     float: left;
 
-    .accounts span{
+    .accounts span, .contacts span{
       font-size: large;
       color: white;
     }
@@ -43,7 +43,7 @@
     float: left;
     padding-left: 2vw;
 
-    .accounts {
+    .accounts, .contacts {
       height: 30px;
     }
   }

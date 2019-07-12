@@ -14,7 +14,10 @@
 #
 
 class Contact < ApplicationRecord
-  validates :email, :first_name, :last_name, :company_id, presence: true
+  validates :email, :name, :company_id, presence: true
+  validate :ensure_photo
+
+  has_one_attached :photo
 
   belongs_to :company,
     foreign_key: :company_id,
@@ -27,4 +30,10 @@ class Contact < ApplicationRecord
   has_one :supervisor,
     through: :company,
     source: :supervisor
+
+  def ensure_photo
+    if !self.photo.attached?
+      self.photo.attach(io: File.open('app/assets/images/user-thumbnail.png'), filename: 'profile.png', content_type: 'image/png')
+    end
+  end
 end

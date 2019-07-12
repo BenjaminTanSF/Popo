@@ -74,8 +74,7 @@ ActiveRecord::Base.transaction do
   100.times do
     Contact.create!(
       'email' => Faker::Internet.unique.free_email,
-      'first_name' => Faker::Name.first_name,
-      'last_name' => Faker::Name.last_name,
+      'name' => Faker::FunnyName.two_word_name,
       'phone_number' => Faker::PhoneNumber.phone_number,
       'cell_number' => Faker::PhoneNumber.cell_phone,
       'company_id' => account_ids.sample

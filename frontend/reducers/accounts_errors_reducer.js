@@ -1,6 +1,6 @@
 import { RECEIVE_ACCOUNTS_ERRORS, RECEIVE_CURRENT_ACCOUNT, RECEIVE_ALL_ACCOUNTS, CLEAR_ERRORS } from '../actions/accounts_actions';
 
-const sessionErrorsReducer = (state = [], action) => {
+const accountsErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ACCOUNTS_ERRORS:
@@ -16,4 +16,4 @@ const sessionErrorsReducer = (state = [], action) => {
   }
 };
 
-export default sessionErrorsReducer;
+export default accountsErrorsReducer;

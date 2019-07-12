@@ -51,6 +51,13 @@ const NavBar = ({ currentUser, modalState, openModal, closeModal }) => {
             </div>
           </Link>
         </div>
+        <div className="menuItem" onClick={toggleActive}>
+          <Link to="/contacts">
+            <div className="contacts">
+              <span className="contactsSpan">Contacts</span>
+            </div>
+          </Link>
+        </div>
       </div>
       <div className="navBarRight">
         <div className="userThumbnail">
