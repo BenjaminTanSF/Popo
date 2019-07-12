@@ -36,38 +36,40 @@
       margin: auto;
       box-shadow: 0px 1px 0px 0px lightgrey;
 
-        thead, tbody {
-          float: left;
-          width: 100%;
+      thead, tbody {
+        float: left;
+        width: 100%;
+      }
+
+      tbody {
+        overflow: auto;
+        height: 450px;
+        height: calc(100vh - 250px);
+
+        .tableHeadAccountName a, .tableHeadWebsite span {
+          color: #5295d9;
         }
+      }
 
-        tbody {
-          overflow: auto;
-          height: 450px;
-          height: calc(100vh - 250px);
+      tr {
+        width: 100%;
+        display: table;
+        text-align: left;
+        min-height: 22px;
+        box-shadow: 0px 0px 0.5px 0px lightgrey;
+      }
 
-          .tableHeadAccountName a, .tableHeadWebsite span {
-            color: #5295d9;
-          }
+      th, td {
+        width: 25%;
+        text-align: left;
+        font-size: 24px;
+        padding: 13px 0px;
+        display: inline-block;
+        overflow: hidden;
+        
+        a {
+          text-decoration: none;
         }
-
-        tr {
-          width: 100%;
-          display: table;
-          text-align: left;
-          min-height: 22px;
-          box-shadow: 0px 0px 0.5px 0px lightgrey;
-        }
-
-        th, td {
-          width: 25%;
-          text-align: left;
-          font-size: 24px;
-          padding: 13px 0px;
-
-          a {
-            text-decoration: none;
-          }
 
         }
     }
