@@ -1,8 +1,9 @@
 .splash {
   width: 100%;
   height: calc(100vh - 58px);
-  background-image: linear-gradient( #51afff, #ffffff);
-  
+  background-position: center;
+  background-size: cover !important;
+
   h1 {
       font-size: xx-large;
     text-align: center;
@@ -23,7 +24,9 @@
 
   .btnDiv {
     text-align: center;
-    margin: 50px auto;
+    position: absolute;
+    left: 45%;
+    top: 46%;
 
     a {
       background-color: red;
