@@ -4,8 +4,6 @@ export const RECEIVE_ALL_CONTACTS = 'RECEIVE_ALL_CONTACTS';
 export const RECEIVE_CURRENT_CONTACT = 'RECEIVE_CURRENT_CONTACT';
 export const START_LOADING_ALL_CONTACTS = 'START_LOADING_ALL_CONTACTS';
 export const START_LOADING_SINGLE_CONTACT = 'START_LOADING_SINGLE_CONTACT';
-export const CLEAR_ALL_CONTACTS = 'CLEAR_ALL_CONTACTS';
-export const CLEAR_SINGLE_CONTACT = 'CLEAR_SINGLE_CONTACT';
 export const DESTROY_CURRENT_CONTACT = 'DESTROY_CURRENT_CONTACT';
 export const RECEIVE_CONTACTS_ERRORS = 'RECEIVE_CONTACTS_ERRORS';
 export const CLEAR_CONTACTS_ERRORS = 'CLEAR_CONTACTS_ERRORS';
@@ -16,14 +14,6 @@ export const startLoadingAllContacts = () => ({
 
 export const startLoadingSingleContact = () => ({
   type: START_LOADING_SINGLE_CONTACT
-});
-
-export const clearAllContacts = () => ({
-  type: CLEAR_ALL_CONTACTS
-});
-
-export const clearSingleContact = () => ({
-  type: CLEAR_SINGLE_CONTACT
 });
 
 export const receiveAllContacts = contacts => ({

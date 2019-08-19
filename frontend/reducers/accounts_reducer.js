@@ -1,6 +1,8 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_ALL_ACCOUNTS, RECEIVE_CURRENT_ACCOUNT, CLEAR_ALL_ACCOUNTS, CLEAR_SINGLE_ACCOUNT, DESTROY_CURRENT_ACCOUNT } from '../actions/accounts_actions';
+import { RECEIVE_ALL_ACCOUNTS, RECEIVE_CURRENT_ACCOUNT, DESTROY_CURRENT_ACCOUNT } from '../actions/accounts_actions';
+import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
+
 
 const accountsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -12,9 +14,7 @@ const accountsReducer = (oldState = {}, action) => {
     case RECEIVE_CURRENT_ACCOUNT:
       nextState = action.currentAccount;
       return nextState;
-    case CLEAR_ALL_ACCOUNTS:
-      return {};
-    case CLEAR_SINGLE_ACCOUNT:
+    case LOGOUT_CURRENT_USER:
       return {};
     case DESTROY_CURRENT_ACCOUNT:
       delete nextState[action.currentAccount.id];
