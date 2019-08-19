@@ -4,6 +4,8 @@ export const RECEIVE_ALL_ACCOUNTS = 'RECEIVE_ALL_ACCOUNTS';
 export const RECEIVE_CURRENT_ACCOUNT = 'RECEIVE_CURRENT_ACCOUNT';
 export const START_LOADING_ALL_ACCOUNTS = 'START_LOADING_ALL_ACCOUNTS';
 export const START_LOADING_SINGLE_ACCOUNT = 'START_LOADING_SINGLE_ACCOUNT';
+export const CLEAR_ALL_ACCOUNTS = 'CLEAR_ALL_ACCOUNTS';
+export const CLEAR_SINGLE_ACCOUNT = 'CLEAR_SINGLE_ACCOUNT';
 export const DESTROY_CURRENT_ACCOUNT = 'DESTROY_CURRENT_ACCOUNT';
 export const RECEIVE_ACCOUNTS_ERRORS = 'RECEIVE_ACCOUNTS_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
@@ -26,6 +28,14 @@ export const receiveCurrentAccount = currentAccount => ({
   currentAccount
 });
 
+export const clearAllAccounts = () => ({
+  type: CLEAR_ALL_ACCOUNTS
+});
+
+export const clearSingleAccount = () => ({
+  type: CLEAR_SINGLE_ACCOUNT
+});
+
 export const destroyCurrentAccount = currentAccount => ({
   type: DESTROY_CURRENT_ACCOUNT,
   currentAccount
@@ -34,6 +44,10 @@ export const destroyCurrentAccount = currentAccount => ({
 export const receiveErrors = errors => ({
   type: RECEIVE_ACCOUNTS_ERRORS,
   errors
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });
 
 export const index = () => dispatch => {
@@ -71,7 +85,3 @@ export const update = (account, id) => dispatch => (
 export const destroy = id => dispatch => (
   APIUtil.destroy(id).then(currentAccount => (dispatch(destroyCurrentAccount(currentAccount))))
 );
-
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS
-});

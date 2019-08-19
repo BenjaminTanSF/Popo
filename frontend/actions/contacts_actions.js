@@ -4,6 +4,8 @@ export const RECEIVE_ALL_CONTACTS = 'RECEIVE_ALL_CONTACTS';
 export const RECEIVE_CURRENT_CONTACT = 'RECEIVE_CURRENT_CONTACT';
 export const START_LOADING_ALL_CONTACTS = 'START_LOADING_ALL_CONTACTS';
 export const START_LOADING_SINGLE_CONTACT = 'START_LOADING_SINGLE_CONTACT';
+export const CLEAR_ALL_CONTACTS = 'CLEAR_ALL_CONTACTS';
+export const CLEAR_SINGLE_CONTACT = 'CLEAR_SINGLE_CONTACT';
 export const DESTROY_CURRENT_CONTACT = 'DESTROY_CURRENT_CONTACT';
 export const RECEIVE_CONTACTS_ERRORS = 'RECEIVE_CONTACTS_ERRORS';
 export const CLEAR_CONTACTS_ERRORS = 'CLEAR_CONTACTS_ERRORS';
@@ -14,6 +16,14 @@ export const startLoadingAllContacts = () => ({
 
 export const startLoadingSingleContact = () => ({
   type: START_LOADING_SINGLE_CONTACT
+});
+
+export const clearAllContacts = () => ({
+  type: CLEAR_ALL_CONTACTS
+});
+
+export const clearSingleContact = () => ({
+  type: CLEAR_SINGLE_CONTACT
 });
 
 export const receiveAllContacts = contacts => ({
@@ -34,6 +44,10 @@ export const destroyCurrentContact = currentContact => ({
 export const receiveErrors = errors => ({
   type: RECEIVE_CONTACTS_ERRORS,
   errors
+});
+
+export const clearContactsErrors = () => ({
+  type: CLEAR_CONTACTS_ERRORS
 });
 
 export const index = () => dispatch => {
@@ -71,7 +85,3 @@ export const update = (contact, id) => dispatch => (
 export const destroy = id => dispatch => (
   APIUtil.destroy(id).then(currentContact => (dispatch(destroyCurrentContact(currentContact))))
 );
-
-export const clearContactsErrors = () => ({
-  type: CLEAR_CONTACTS_ERRORS
-});
