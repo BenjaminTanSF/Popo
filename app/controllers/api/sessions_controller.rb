@@ -1,4 +1,10 @@
 class Api::SessionsController < ApplicationController
+  def new
+    @accounts = Account.all.pluck('name')
+    @user = User.new
+    render "api/users/new"
+  end
+  
   def create
     @user = User.find_by_credentials(
       params[:user][:username],
