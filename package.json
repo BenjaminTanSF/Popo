@@ -2,10 +2,10 @@
   "name": "popo-crm",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
-    "@babel/runtime": "^7.8.3",
+    "@babel/runtime": "^7.8.4",
     "babel-loader": "^8.0.6",
     "lodash": "^4.17.13",
     "react": "^16.12.0",
